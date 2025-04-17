@@ -1,92 +1,61 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ExternalLink, Github } from "lucide-react"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Authencia - Blockchain Diploma Verification",
     description:
-      "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+      "A blockchain-based platform enabling universities to issue tamper-proof academic certificates. Built in collaboration with ALECSO to standardize and secure certificate authentication across the Arab world.",
+    image: "/authencia.jpeg",
+    tags: ["React", "Node.js", "Web3", "MongoDB", "Blockchain"],
     category: "fullstack",
-    github: "https://github.com",
-    demo: "https://example.com",
+    github: "https://github.com/haytham1996",
+    demo: "https://authencia.k2lis.com/",
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Dynamic NFT Marketplace",
     description:
-      "A Kanban-style task management application with drag-and-drop functionality and team collaboration features.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
-    category: "frontend",
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    id: 3,
-    title: "Real-time Chat Application",
-    description:
-      "A real-time messaging platform with private chats, group conversations, and media sharing capabilities.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Next.js", "Socket.io", "MongoDB", "Express"],
+      "A marketplace for dynamic NFTs allowing users to mint, trade, and interact with smart contracts securely.",
+    image: "/alecso.png",
+    tags: ["React", "Node.js", "Express", "Web3"],
     category: "fullstack",
-    github: "https://github.com",
-    demo: "https://example.com",
+    demo: "https://nft.alecso.org/",
   },
+
   {
     id: 4,
-    title: "Content Management System",
+    title: "Lyveat Partner Dashboard",
     description:
-      "A custom CMS built for content creators with a rich text editor, media library, and publishing workflow.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "Node.js", "PostgreSQL", "GraphQL"],
+      "An internal dashboard for restaurant partners with integrated payment APIs, statistics, and responsive UI.",
+    image: "/lyveat.jpg",
+    tags: ["Next.js", "MongoDB", "AWS", "Tailwind CSS"],
     category: "fullstack",
-    github: "https://github.com",
-    demo: "https://example.com",
+    github: "https://github.com/haytham1996",
+    demo: "https://www.lyveat.com",
   },
-  {
-    id: 5,
-    title: "Weather Dashboard",
-    description:
-      "An interactive weather dashboard displaying current conditions and forecasts with beautiful visualizations.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["JavaScript", "Chart.js", "Weather API", "CSS"],
-    category: "frontend",
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    id: 6,
-    title: "RESTful API Service",
-    description:
-      "A robust API service for data management with authentication, rate limiting, and comprehensive documentation.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Node.js", "Express", "MongoDB", "JWT"],
-    category: "backend",
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-]
+];
 
 const categories = [
   { id: "all", name: "All Projects" },
   { id: "frontend", name: "Frontend" },
   { id: "backend", name: "Backend" },
   { id: "fullstack", name: "Full Stack" },
-]
+];
 
 export default function Projects() {
-  const [activeCategory, setActiveCategory] = useState("all")
+  const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredProjects =
-    activeCategory === "all" ? projects : projects.filter((project) => project.category === activeCategory)
+    activeCategory === "all"
+      ? projects
+      : projects.filter((project) => project.category === activeCategory);
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
@@ -111,7 +80,11 @@ export default function Projects() {
               key={category.id}
               variant={activeCategory === category.id ? "default" : "outline"}
               onClick={() => setActiveCategory(category.id)}
-              className={activeCategory === category.id ? "bg-purple-600 hover:bg-purple-700" : ""}
+              className={
+                activeCategory === category.id
+                  ? "bg-purple-600 hover:bg-purple-700"
+                  : ""
+              }
             >
               {category.name}
             </Button>
@@ -133,7 +106,7 @@ export default function Projects() {
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-500  group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4">
                   <div className="flex gap-3">
@@ -161,7 +134,9 @@ export default function Projects() {
 
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  {project.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
@@ -198,5 +173,5 @@ export default function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
