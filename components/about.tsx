@@ -32,10 +32,10 @@ export default function About() {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative w-full h-[400px] rounded-lg overflow-hidden shadow-xl">
+            <div className="relative w-full h-[650px] rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/placeholder.svg?height=400&width=400"
-                alt="John Doe"
+                src="/me.jpg"
+                alt="Haytham Ben Mansour"
                 fill
                 className="object-cover"
               />

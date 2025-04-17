@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -11,28 +11,32 @@ const navLinks = [
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
   { name: "Contact", href: "#contact" },
-]
+];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md" : "bg-transparent"}`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md"
+          : "bg-transparent"
+      }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
@@ -40,7 +44,7 @@ export default function Navbar() {
             href="#home"
             className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 text-transparent bg-clip-text"
           >
-            DevPortfolio
+            HBM
           </Link>
 
           {/* Desktop Navigation */}
@@ -84,5 +88,5 @@ export default function Navbar() {
         </div>
       )}
     </header>
-  )
+  );
 }
