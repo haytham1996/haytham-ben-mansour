@@ -13,8 +13,8 @@ const projects = [
     description:
       "A blockchain-based platform enabling universities to issue tamper-proof academic certificates. Built in collaboration with ALECSO to standardize and secure certificate authentication across the Arab world.",
     image: "/authencia.jpeg",
-    tags: ["React", "Node.js", "Web3", "MongoDB", "Blockchain"],
-    category: "fullstack",
+    tags: ["React", "Node.js", "Express", "Web3", "MongoDB", "Blockchain"],
+    category: ["fullstack", "frontend", "backend"],
     github: "https://github.com/haytham1996",
     demo: "https://authencia.k2lis.com/",
   },
@@ -25,7 +25,7 @@ const projects = [
       "A marketplace for dynamic NFTs allowing users to mint, trade, and interact with smart contracts securely.",
     image: "/alecso.png",
     tags: ["React", "Node.js", "Express", "Web3"],
-    category: "fullstack",
+    category: ["fullstack", "frontend", "backend"],
     demo: "https://nft.alecso.org/",
   },
 
@@ -35,8 +35,8 @@ const projects = [
     description:
       "An internal dashboard for restaurant partners with integrated payment APIs, statistics, and responsive UI.",
     image: "/lyveat.jpg",
-    tags: ["Next.js", "MongoDB", "AWS", "Tailwind CSS"],
-    category: "fullstack",
+    tags: ["Next.js", "MongoDB", "Node.js", "Express", "AWS", "Tailwind CSS"],
+    category: ["fullstack", "frontend", "backend"],
     github: "https://github.com/haytham1996",
     demo: "https://www.lyveat.com",
   },
@@ -55,7 +55,7 @@ export default function Projects() {
   const filteredProjects =
     activeCategory === "all"
       ? projects
-      : projects.filter((project) => project.category === activeCategory);
+      : projects.filter((project) => project.category.includes(activeCategory));
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">

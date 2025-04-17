@@ -11,6 +11,9 @@ export const metadata = {
   title: "Haytham Ben Mansour",
   description:
     "Portfolio for a Fullstack JavaScript Developer and Software Engineer",
+  icons: {
+    icon: [{ url: "/favicon.ico" }],
+  },
 };
 
 export default function RootLayout({
