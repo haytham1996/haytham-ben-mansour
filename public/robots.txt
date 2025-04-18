@@ -1,0 +1,6 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://haytham-ben-mansour-si4f.vercel.app/sitemap.xml
