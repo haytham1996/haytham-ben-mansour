@@ -58,7 +58,10 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-20">
+    <section
+      id="experience"
+      className="py-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-100 via-white to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-900"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

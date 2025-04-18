@@ -1,7 +1,14 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Code, Database, Layout, Server, Terminal, Workflow } from "lucide-react"
+import { motion } from "framer-motion";
+import {
+  Code,
+  Database,
+  Layout,
+  Server,
+  Terminal,
+  Workflow,
+} from "lucide-react";
 
 const skills = [
   {
@@ -67,11 +74,14 @@ const skills = [
       { name: "Problem Solving", level: 95 },
     ],
   },
-]
+];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20">
+    <section
+      id="skills"
+      className="py-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-100 via-white to-white dark:from-gray-900 dark:via-gray-900 dark:to-gray-900"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,7 +93,8 @@ export default function Skills() {
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">My Skills</h2>
           <div className="w-20 h-1 bg-purple-600 mx-auto mb-8"></div>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            A comprehensive overview of my technical skills and proficiency levels.
+            A comprehensive overview of my technical skills and proficiency
+            levels.
           </p>
         </motion.div>
 
@@ -98,7 +109,9 @@ export default function Skills() {
               className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <div className="flex items-center mb-6">
-                <div className="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-lg mr-4">{skillGroup.icon}</div>
+                <div className="p-3 bg-purple-100 dark:bg-white rounded-lg mr-4">
+                  {skillGroup.icon}
+                </div>
                 <h3 className="text-xl font-bold">{skillGroup.category}</h3>
               </div>
 
@@ -106,8 +119,12 @@ export default function Skills() {
                 {skillGroup.items.map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-1">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-sm text-gray-600 dark:text-gray-400">{skill.level}%</span>
+                      <span className="font-medium text-white">
+                        {skill.name}
+                      </span>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">
+                        {skill.level}%
+                      </span>
                     </div>
                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                       <div
@@ -123,5 +140,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
